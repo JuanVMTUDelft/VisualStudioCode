@@ -57,17 +57,28 @@ int main()
     };
 
     // Unformatted display so you can see how to access the vector elements
-    std::cout << tours.title << std::endl;
+    std::cout << "              " << tours.title << "                     \n" << std::endl;
+    std::cout << std::setw(15) << std::left << "Country";
+    std::cout << std::setw(15) << "City";
+    std::cout << std::setw(20) << std::right <<"Population";
+    std::cout << std::setw(20) << "Price" << std::endl;   
+    std::cout << "----------------------------------------------------------------------" << std::endl;
     for(auto country : tours.countries) {   // loop through the countries
-        std::cout << country.name << std::endl;
-        for(auto city : country.cities) {       // loop through the cities for each country
-            std::cout << "\t" << city.name 
-                          << "\t" << city.population 
-                          << "\t" << city.cost 
-                          << std::endl;
+        for(auto city : country.cities) {   
+            if(city.name==country.cities.at(0).name){
+                std::cout << std::setw(15) << std::left << country.name;  
+            }
+            else{
+                std::cout << std::setw(15) << std::left << " "; 
+            }
+              // loop through the cities for each country
+            std::cout << std::setw(15) << city.name;
+            std::cout << std::setw(20) << std::right << city.population 
+                      << std::setw(20) << city.cost 
+                      << std::endl;
         }
     }
 
     std::cout << std::endl << std::endl;
     return 0;
-}
+} 
