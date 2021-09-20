@@ -184,15 +184,23 @@ std::ostream &operator<< (std::ostream &os, Player &p){
     return os;
 }
 
+template <typename T>
+void display_players(std::vector<T> input){
+    for (auto item:  input){
+        std::cout << item << std::endl;
+    }
+}
 
 void test2(){
     std::vector<Player> players;
 
     Player p1{"Cloud Strife", Player::Mode::Attack, Player::Direction::East};
+    Player p2{"Tifa Lockhart", Player::Mode::Defense, Player::Direction::North};
 
     players.push_back(p1);
+    players.push_back(p2);
 
-    std::cout << p1 << std::endl;
+    display_players(players);
 }
 
 
