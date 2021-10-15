@@ -14,7 +14,9 @@ Savings_Account::Savings_Account(std::string name_val, double balance_val, doubl
 :Account{name_val, balance_val}, int_rate{int_val}{
 };
 
-Savings_Account::
+Savings_Account::Savings_Account()
+:Account{"No name", 0}, int_rate{1}{
+};
 
 // Destructor
 

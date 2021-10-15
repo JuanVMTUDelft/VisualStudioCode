@@ -6,9 +6,6 @@
 
 
 class Savings_Account: public Account{
-
-
-
 private:
     // Class attributes
     double int_rate; 
@@ -19,6 +16,7 @@ public:
 
     // Constructor
     Savings_Account(std::string, double, double);
+    Savings_Account();
 
     // Destructor
     ~Savings_Account();

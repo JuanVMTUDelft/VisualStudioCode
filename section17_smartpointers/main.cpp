@@ -64,6 +64,7 @@ std::vector<std::unique_ptr<Account>> accounts;
 accounts.push_back(std::make_unique<Account>("Juan", 2000));
 accounts.push_back(std::make_unique<Account>("Pipo", 3000));
 accounts.push_back(std::make_unique<Savings_Account>("Alba", 5000, 2));
+accounts.push_back(std::make_unique<Savings_Account>());
 
 for (const auto &acc: accounts){
     std::cout << acc->get_name() << ": " << acc->get_balance() << std::endl;
